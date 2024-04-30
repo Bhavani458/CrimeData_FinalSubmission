@@ -1,7 +1,7 @@
-Crime Data Final Submission:
+LA Crime Watch: Exploring patterns and trends
 
 Team Members:
-Bhavani Priya Ganji
-Esiquileo
-Sagnik
-Sooyeon 
+- Sagnik Chand
+- Bhavani Priya Ganji
+- Esiquio Iglesias  
+- Sooyeon Lee
