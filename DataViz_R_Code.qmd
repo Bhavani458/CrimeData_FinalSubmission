@@ -246,19 +246,22 @@ dateplot
 ```{r}
 library(sf) 
 
-LAPD_divisions_geodata <- sf::read_sf("LAPD_Divisions_crimes.gpkg")
+LAPD_divisions_geodata <- sf::read_sf("LAPD_Divisions_CrimesPop.gpkg")
+
+LAPD_divisions_geodata <- LAPD_divisions_geodata %>% rename('crimes_Count' = 'LAPD_Divis','LAPD_Divisions' = 'LAPD_Div_1', 'Population' = 'Lapd_div_6')
 
 head(LAPD_divisions_geodata)
 
-names(LAPD_divisions_geodata)
+LAPD_divisions_geodata$crimes_density=LAPD_divisions_geodata$crimes_Count/LAPD_divisions_geodata$Population
 
 heat_map <- ggplot(data = LAPD_divisions_geodata) + 
-  geom_sf(aes(fill = crimes_cou)) + 
+  geom_sf(aes(fill = crimes_density)) + 
   scale_fill_viridis_c(direction = -1, option = 'rocket') +
-  labs(title = "Crime Choropleth Map of Los Angeles, USA",  # Adding a title
-       fill = "Total of crimes", 
-       caption = "Source: US Crime Department", 
-       subtitle = "Data of crimes (Stolen Vehicles) in 2023") +  theme_minimal() +
+  labs(title = "Crime Choropleth Map in Los Angeles, USA",  # Adding a title
+       fill = "Crimes density(population)", 
+       caption = "Source: US Crime Department, Los Angeles
+GeoHub, Los Angeles Police Department", 
+       subtitle = "Data of crimes (stolen vehicles) in 2023") +  theme_minimal() +
   theme(legend.position = "right", 
         axis.text.x = element_text(angle = 45, hjust = 1)) 
 
