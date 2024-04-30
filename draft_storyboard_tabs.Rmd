@@ -14,6 +14,9 @@ library(flexdashboard) # always
 
 Welcome to our interactive dashboard, offering a comprehensive overview of crime patterns in Los Angeles, USA. Our data, sourced from the US Crime Department, spans from 2010 to 2016, providing valuable insights into the city's criminal landscape. Delve into various crime types, including theft, assault, and vandalism, and discover intriguing trends, such as the prevalence of stolen vehicles. Interestingly, individuals aged 30 to 40 years old are frequently involved in reported incidents. Stay informed and vigilant as you explore the dynamic visualizations presented here.
 
+You can find the code for this dashboard here:
+https://github.com/Bhavani458/CrimeData_FinalSubmission
+
 ## Column {.tabset .tabset-fade}
 
 
